@@ -100,6 +100,8 @@ source venv/bin/activate (adapt for non-Unix systems)
 pip3 install -R requirements.txt
 ```
 
+Add OPENAI_API_KEY in .env file in root of project
+
 ## Run
 
 ```
