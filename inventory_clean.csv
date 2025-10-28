@@ -1,0 +1,16 @@
+source_row_id,notes,ip,ip_valid,ip_version,ip_reverse_ptr,ip_classification,subnet_cidr,mac,mac_valid,mac_kind,site,hostname,hostname_valid,hostname_kind,fqdn,fqdn_valid,fqdn_kind,owner,owner_email,owner_team,device,device_type_confidence
+1,db host,192.168.10.5,True,4,5.10.168.192.in-addr.arpa,private,192.168.10.5/24,aa:bb:cc:dd:ee:ff,True,eui48,Bangalore-Campus,host01,True,single_label,,False,,Priya,priya@corp.example.com,Platform,HOST01,high
+2,edge gw?,10.0.1.300,False,,,,,11:22:33:44:55:66,True,eui48,Headquarters-Building-1,host-02,True,single_label,host-02.local,True,fqdn,,,,,
+3,,10.0.1,False,,,,,aa:bb:cc:dd:ee:ff,True,eui48,Headquarters-Building-1,host03,True,single_label,,False,,Jane,jane@corp.example.com,,switch,low
+4,,10.0.1.1.2,False,,,,,00:11:22:33:44:55,True,eui48,Headquarters,printer-01,True,single_label,,False,,,,Facilities,printer,high
+5,camera PoE on port 3,fe80::1%eth0,False,,,,,00:aa:bb:cc:dd:ee,True,eui48,Laboratory-1,iot-cam01,True,single_label,,False,,,,,iot-cam01,high
+6,,127.0.0.1,True,4,1.0.0.127.in-addr.arpa,loopback,127.0.0.0/8,nan,False,,,local-test,True,single_label,,False,,,,,local-test,low
+7,,169.254.10.20,True,4,20.10.254.169.in-addr.arpa,link_local_apipa,169.254.0.0/16,nan,False,,,host-apipa,True,single_label,,False,,,,,host-apipa,low
+8,,10.10.10.10,True,4,10.10.10.10.in-addr.arpa,private,10.10.10.10/24,nan,False,,Bangalore-Campus,srv-10,True,single_label,,False,,,,,srv-10,high
+9,,abc.def.ghi.jkl,False,,,,,nan,False,,,badhost,True,single_label,,False,,,,,,
+10,,192.168.1.-1,False,,,,,nan,False,,,neg,True,single_label,,False,,,,,,
+11,Potential broadcast,192.168.1.255,True,4,255.1.168.192.in-addr.arpa,private,192.168.1.255/24,nan,False,,,bcast,True,single_label,,False,,,,,bcast,low
+12,Potential network id,192.168.1.0,True,4,0.1.168.192.in-addr.arpa,private,192.168.1.0/24,nan,False,,,netid,True,single_label,,False,,,,,,
+13,,8.8.8.8,True,4,8.8.8.8.in-addr.arpa,public_or_other,,nan,False,,Datacenter-1,dns-google,True,single_label,,False,,,,,router,low
+14,,10.10.10.10,True,4,10.10.10.10.in-addr.arpa,private,10.10.10.10/24,nan,False,,,host-10,True,single_label,,False,,,,,host-10,high
+15,,nan,False,,,,,nan,False,,,missing-ip,True,single_label,,False,,,,,,
