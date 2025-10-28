@@ -1,20 +1,3 @@
-# #!/usr/bin/env python3
-# # Simple runner to produce baseline outputs.
-# # Extend this to call your own normalization/classification steps.
-
-# import subprocess, sys
-# from pathlib import Path
-
-# HERE = Path(__file__).parent
-
-# def main():
-#     # Step 1: IPv4 normalization (example starter)
-#     subprocess.check_call([sys.executable, str(HERE / "run_ipv4_validation.py"), str(HERE / "inventory_raw.csv")])
-#     print("IPv4 normalization complete. Next: add your steps to reach full target schema.")
-
-# if __name__ == "__main__":
-#     main()
-
 import pandas as pd
 import json
 from typing import Dict, List
@@ -63,18 +46,7 @@ String:
 '''
 
 def apply_and_expand(df: pd.DataFrame, func, input_cols: list[str], **kwargs) -> pd.DataFrame:
-    """
-    Apply a function that takes multiple columns from each row and returns a dict.
-    The returned dict's keys become new columns in the DataFrame.
-
-    Args:
-        df: Input DataFrame
-        func: Function to apply (should accept *args or a row)
-        input_cols: List of column names to pass to func
-
-    Returns:
-        DataFrame with new columns added
-    """
+    
     # Apply the function row-wise, passing in the specified columns
     result_df = (
         df[input_cols]
@@ -127,6 +99,7 @@ def generate_anomalies_json(output_file: str, anomaly_records: Dict) -> None:
 def main():
     # Load input data
     raw_data = pd.read_csv("inventory_raw.csv")
+    raw_data = raw_data.set_index("source_row_id")
 
     llm_client = GPTClient()
 
